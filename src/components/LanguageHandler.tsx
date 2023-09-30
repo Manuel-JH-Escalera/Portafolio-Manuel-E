@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import useLanguage from '../contexts/language/languageUse';
+import useLanguageStore from '../contexts/language/languageStore';
 
 const LanguageDetector: React.FC = () => {
 
-  const { estado: { language }, acciones: { setLanguage } } = useLanguage();
+  const { language, setLanguage } = useLanguageStore();
 
   const handleChangeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLanguage = event.target.value;
@@ -24,8 +24,8 @@ const LanguageDetector: React.FC = () => {
 
   return (
     <select name="languageSelector" value={language} onChange={handleChangeLanguage}>
-      <option value="en">English</option>
-      <option value="es">Español</option>
+      <option value="en">EN</option>
+      <option value="es">ES</option>
     </select>
   );
 };

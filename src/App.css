@@ -1,43 +1,128 @@
-/* body */
+/* Estilos generales */
 
 body {
   background-color: black;
 }
 
-/* Navbar */
+/* Estilos de Navbar */
 
-#navbarSupportedContent ul li {
-  padding: 0px 1vw;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-.navbar li {
+li {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.navbar-brand {
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-menu li {
   display: inline-block;
   position: relative;
 }
 
-.navbar a {
+.navbar-menu a {
   position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.navbar .nav-link::before {
+.navbar-menu a:hover {
+  color: #ddd;
+}
+
+.navbar-menu a.nav-link::before {
   content: "";
   position: absolute;
   width: 0%;
   height: 3px;
   top: 0;
   left: 50%;
-  background: #464c53;
+  /* background: #464c53; */
   transition: all 0.3s ease-in-out;
 }
 
-.navbar .nav-link:hover::before {
+nav.dark-mode .navbar-menu a.nav-link::before {
+  background: white;
+}
+
+nav.light-mode .navbar-menu a.nav-link::before {
+  background: black;
+}
+
+.navbar-menu a.nav-link:hover::before {
   width: 100%;
   left: 0;
 }
 
-@media (max-width:992px) {
+/* Estilos de light-mode */
 
-  #navbarSupportedContent ul li {
-    padding: 0px 0vw;
+nav.light-mode {
+  background-color: white;
+  color: black;
+}
+
+nav.light-mode .navbar-brand,
+nav.light-mode .navbar-toggler,
+nav.light-mode .navbar-menu a {
+  color: black;
+}
+
+/* Estilos de dark-mode */
+
+nav.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+nav.dark-mode .navbar-brand,
+nav.dark-mode .navbar-toggler,
+nav.dark-mode .navbar-menu a {
+  color: white;
+}
+
+/* Estilos para el menú responsivo */
+
+@media (max-width: 768px) {
+  .navbar-menu {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 60px; /* Ajuste este valor según el tamaño de tu navbar */
+      left: 0;
+      flex-direction: column;
+      gap: 0;
+      background-color: #333;
+  }
+
+  .navbar-menu.show {
+      display: flex;
+  }
+
+  .navbar-toggler {
+      display: inline;
   }
 }
