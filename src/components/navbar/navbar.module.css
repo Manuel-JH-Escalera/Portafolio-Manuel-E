@@ -1,0 +1,133 @@
+@import url('../../App.css');
+
+/* navbar.module.css */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5dvh 5vw;
+    font-family: 'Khand-Regular';
+}
+
+li {
+    margin: 0px 1vw;
+}
+
+h1 .accentColor {
+    color: var(--accent-text-color);
+}
+
+.navbarBrand {
+    margin: 0;
+    transition: color 0.3s ease;
+    font-family: 'Array-Regular';
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+}
+
+.navbarToggler {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navbarMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.navbarMenu li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbarMenu a {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover{
+    color: var(--accent-text-color) !important;
+}
+
+.navbarMenu a:hover {
+    color: #ddd;
+}
+
+.navLink {
+    position: relative;
+    display: inline-block;
+    padding: 2px; 
+}
+
+.navLink::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    background: var(--accent-text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.navLink:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
+/* Estilos de light-mode */
+
+.lightMode {
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
+}
+
+.lightMode .navbarBrand,
+.lightMode .navbarToggler,
+.lightMode .navbarMenu a {
+    color: black;
+}
+
+/* Estilos de dark-mode */
+
+.darkMode {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+.darkMode .navbarBrand,
+.darkMode .navbarToggler,
+.darkMode .navbarMenu a {
+    color: white;
+}
+
+/* Estilos para el menú responsivo */
+
+@media (max-width: 768px) {
+    .navbarMenu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        /* Ajuste este valor según el tamaño de tu navbar */
+        left: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: #333;
+    }
+
+    .show {
+        display: flex;
+    }
+
+    .navbarToggler {
+        display: inline;
+    }
+}

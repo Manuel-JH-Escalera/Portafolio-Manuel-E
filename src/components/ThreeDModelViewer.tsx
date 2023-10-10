@@ -12,7 +12,7 @@ const Model: React.FC<ModelProps> = ({ url }) => {
   const [model, setModel] = useState<THREE.Group | null>(null);
 
   useEffect(() => {
-
+    let isCancelled = false;
     const loader = new GLTFLoader();
 
     const dracoLoader = new DRACOLoader();
@@ -22,18 +22,24 @@ const Model: React.FC<ModelProps> = ({ url }) => {
     loader.load(
       url,
       (gltf) => {
-        setModel(gltf.scene);
+        if (!isCancelled) {
+          setModel(gltf.scene);
+        }
       },
       (xhr) => {
-        console.log(`${(xhr.loaded / xhr.total) * 100} + '% loaded'`);
+        console.log(`${(xhr.loaded / xhr.total) * 100} % loaded`);
       },
       (error) => {
         console.log('An error happened:', error);
       },
     );
+
+    return () => {
+      isCancelled = true;
+    };
   }, [url]);
 
-  return model ? <primitive object={model} /> : null;
+  return model ? <primitive object={model} position={[-0.9, 0, -0.4]} /> : null;
 };
 
 type ThreeDModelViewerProps = {
@@ -42,11 +48,13 @@ type ThreeDModelViewerProps = {
 
 const ThreeDModelViewer: React.FC<ThreeDModelViewerProps> = ({ modelUrl }) => {
   return (
-    <Canvas>
+    <Canvas camera={{ position: [-5, 6, 5], fov: 75 }}>
       <ambientLight />
-      <directionalLight position={[0, 10, 5]} intensity={0.5} />
-      <Model url={modelUrl} />
-      <OrbitControls />
+      <directionalLight position={[0, 10, 5]} intensity={0.7} />
+      <React.Suspense fallback={null}>
+        <Model url={modelUrl} />
+      </React.Suspense>
+      <OrbitControls target={[0, 0, 0]} autoRotate/>
     </Canvas>
   );
 };

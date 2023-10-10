@@ -1,12 +1,12 @@
 import './App.css';
-import Navbar from './components/navbar';
-import ThreeDModelViewer from './components/ThreeDModelViewer';
+import Navbar from './components/navbar/navbar';
+import FirstView from './views/firstView/FirstView';
 
 function App() {
   return (
     <>
       <Navbar />
-      <ThreeDModelViewer modelUrl="/MEVoxelArt.glb" />
+      <FirstView />
     </>
   );
 }
