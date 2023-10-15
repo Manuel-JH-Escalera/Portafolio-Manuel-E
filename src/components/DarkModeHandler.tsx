@@ -36,7 +36,7 @@ const DarkModeHandler: React.FC = () => {
   }, [darkMode]);
 
   return (
-    <DarkModeSwitch checked={darkMode} onChange={toggleDarkMode} size={30} />
+    <DarkModeSwitch checked={darkMode} onChange={toggleDarkMode} size={30} moonColor='#FFFFFF' sunColor='#002855'/>
   );
 };
 

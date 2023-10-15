@@ -22,9 +22,6 @@ function Navbar() {
             <h1 className={styles.navbarBrand}>Manuel 
                 <span className={styles.accentColor}> Web Dev</span>
             </h1>
-            <button onClick={() => setIsOpen(!isOpen)} className={styles.navbarToggler}>
-                ☰
-            </button>
             <ul className={`${styles.navbarMenu} ${isOpen ? styles.show : ''}`}>
                 <li>
                     <a href="#" className={styles.navLink}>
@@ -47,11 +44,28 @@ function Navbar() {
                     </a>
                 </li>
             </ul>
-            <div className={styles.flexCenter}>
-                <DarkModeHandler />
+            <div className={styles.optionsContainer}>
+                <div className={`mx-1`}>
+                    <LanguageDetector />
+                </div>
+                <div className={`${styles.btnBorder} mx-1`}>
+                    <DarkModeHandler />
+                </div>
             </div>
-            <div className={styles.flexCenter}>
-                <LanguageDetector />
+            <h1 className={styles.navbarBrandMobile}>Manuel 
+                <span className={styles.accentColor}> Web Dev</span>
+            </h1>
+            <div className={styles.navbarMobileContainer}>
+                <div className={`${styles.btnBorder} mx-1`}>
+                    <DarkModeHandler />
+                </div>
+                <div className={`${styles.btnBorderToggler} mx-1 `}>
+                    <button onClick={() => setIsOpen(!isOpen)} className={`${styles.navbarToggler} ${isOpen ? styles.close : ''}`}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </nav>
     );

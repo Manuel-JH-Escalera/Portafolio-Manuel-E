@@ -6,7 +6,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5dvh 5vw;
+    padding: 3dvh 5vw;
     font-family: 'Khand-Regular';
 }
 
@@ -22,7 +22,7 @@ h1 .accentColor {
     margin: 0;
     transition: color 0.3s ease;
     font-family: 'Array-Regular';
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(18px + 6 * ((100vw - 320px) / 680));
 }
 
 .navbarToggler {
@@ -39,6 +39,7 @@ h1 .accentColor {
     margin: 0;
     display: flex;
     gap: 15px;
+    z-index: 1;
 }
 
 .navbarMenu li {
@@ -92,7 +93,7 @@ h1 .accentColor {
 .lightMode .navbarBrand,
 .lightMode .navbarToggler,
 .lightMode .navbarMenu a {
-    color: black;
+    color: var(--light-text-color);
 }
 
 /* Estilos de dark-mode */
@@ -108,26 +109,172 @@ h1 .accentColor {
     color: white;
 }
 
-/* Estilos para el menú responsivo */
+.btnBorder {
+    border-radius: 10px;
+    padding: 1px;
+}
+
+.darkMode .btnBorderToggler {
+    border-radius: 10px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark-text-color);
+    color: var(--dark-text-color);
+    padding: 6px;
+}
+
+.lightMode .btnBorderToggler {
+    border-radius: 10px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--light-text-color);
+    color: var(--light-text-color);
+    padding: 6px;
+}
+
+.lightMode .btnBorder {
+    border: 1px solid var(--light-text-color);
+    color: var(--light-text-color);
+}
+
+.darkMode .btnBorder {
+    border: 1px solid var(--dark-text-color);
+    color: var(--dark-text-color);
+}
+
+.optionsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbarBrandMobile {
+    display: none;
+}
+
+.navbarMobileContainer {
+    display: none;
+}
 
 @media (max-width: 768px) {
+
     .navbarMenu {
         display: none;
-        width: 100%;
+        width: 30%;
         position: absolute;
-        top: 60px;
+        top: 70px;
         /* Ajuste este valor según el tamaño de tu navbar */
-        left: 0;
+        right: 0;
         flex-direction: column;
         gap: 0;
+        margin-right: 5vw;
+        padding: 3px 0px;
+        border-radius: 10px;
+    }
+
+    .lightMode .navbarMenu {
+        background-color: #3ebdf0;
+        border: 1px solid var(--light-text-color);
+    }
+
+    .darkMode .navbarMenu {
         background-color: #333;
+        border: 1px solid var(--dark-text-color);
     }
 
     .show {
         display: flex;
     }
 
-    .navbarToggler {
-        display: inline;
+    .navbarBrandMobile {
+        display: block;
+        margin: 0;
+        transition: color 0.3s ease;
+        font-family: 'Array-Regular';
+        font-size: calc(20px + 6 * ((100vw - 320px) / 680));
     }
+
+    .navbarBrand {
+        display: none;
+    }
+
+    .navbarToggler {
+        display: flex;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 30px;
+        height: 24px;
+        position: relative;
+        outline: none;
+        color: white;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .lightMode .navbarToggler span {
+        background-color: var(--light-text-color);
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s;
+    }
+
+    .darkMode .navbarToggler span {
+        background-color: var(--dark-text-color);
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s;
+    }
+    
+    .navbarToggler span:nth-child(1) {
+        top: 5%;
+    }
+    
+    .navbarToggler span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .navbarToggler span:nth-child(3) {
+        bottom: 5%;
+    }
+    
+    .navbarToggler.close span:nth-child(1) {
+        transform: rotate(45deg) translateY(0px);
+        top: 10px; /* ajusta este valor si es necesario */
+        transform-origin: center;
+    }
+    
+    .navbarToggler.close span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .navbarToggler.close span:nth-child(3) {
+        transform: rotate(-45deg) translateY(0px);
+        bottom: 10px; /* ajusta este valor si es necesario */
+        transform-origin: center;
+    }
+
+    .navbarMobileContainer {
+        display: inline-flex;
+        flex-direction: row;
+    }
+
+    .optionsContainer {
+        width: 84px;
+    }
+
+   .optionsContainer .btnBorder {
+    display: none;
+   }
 }

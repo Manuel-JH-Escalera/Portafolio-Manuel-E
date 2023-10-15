@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import useLanguageStore from '../contexts/language/languageStore';
+import useDarkModeStore from '../contexts/theme/darkModeStore';
 
 const LanguageDetector: React.FC = () => {
   const { language, setLanguage } = useLanguageStore();
+  const { darkMode } = useDarkModeStore();
 
   const handleChangeLanguage = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -28,9 +30,10 @@ const LanguageDetector: React.FC = () => {
       name="languageSelector"
       value={language}
       onChange={handleChangeLanguage}
+      className={darkMode ? 'dark-mode' : 'light-mode'}
     >
-      <option value="en">EN</option>
-      <option value="es">ES</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
     </select>
   );
 };

@@ -39,7 +39,7 @@ const Model: React.FC<ModelProps> = ({ url }) => {
     };
   }, [url]);
 
-  return model ? <primitive object={model} position={[-0.9, 0, -0.4]} /> : null;
+  return model ? <primitive object={model} position={[-0.9, 0.5, -0.4]} /> : null;
 };
 
 type ThreeDModelViewerProps = {
@@ -48,14 +48,16 @@ type ThreeDModelViewerProps = {
 
 const ThreeDModelViewer: React.FC<ThreeDModelViewerProps> = ({ modelUrl }) => {
   return (
-    <Canvas camera={{ position: [-5, 6, 5], fov: 75 }}>
-      <ambientLight />
-      <directionalLight position={[0, 10, 5]} intensity={0.7} />
-      <React.Suspense fallback={null}>
-        <Model url={modelUrl} />
-      </React.Suspense>
-      <OrbitControls target={[0, 0, 0]} autoRotate/>
-    </Canvas>
+    <div id='model-canvas'>
+      <Canvas camera={{ position: [-5, 6, 5], fov: 60 }}>
+        <ambientLight />
+        <directionalLight position={[0, 10, 5]} intensity={0.7} />
+        <React.Suspense fallback={null}>
+          <Model url={modelUrl} />
+        </React.Suspense>
+        <OrbitControls target={[0, 0, 0]} autoRotate/>
+      </Canvas>
+    </div>
   );
 };
 

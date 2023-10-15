@@ -3,16 +3,20 @@ import styles from './FirstView.module.css';
 
 function FirstView() {
   return (
-    <div className={styles["first-view-container"]}>
-        <div className={styles["first-view"]}>
-            <div className="row h-100">
-                <div className="col-6"><h1>test</h1></div>
-                <div className="col-sm-12 col-xs-12 col-md-6 col-xl-6">
-                    <ThreeDModelViewer modelUrl="/MEVoxelArt.glb" />
-                </div>
-            </div>
+    <section className={styles["first-view-container"]}>
+      <div className={styles["first-view"]}>
+        <div className={styles["canvas-container"]}>
+          <ThreeDModelViewer modelUrl="/MEVoxelArt.glb" />
+          <div className={styles["title-container"]}>
+            <h3 className={styles["title-subtitle"]}>¡Hola, Bienvenido a mi portafolio!</h3>
+            <h1 className={styles["title-title"]}>
+              Manuel Escalera
+            </h1>
+            <h3 className={styles["title-description"]}>Desarrollador y Diseñador Web</h3>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
   );
 }
 
