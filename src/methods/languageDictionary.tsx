@@ -5,8 +5,13 @@ interface LanguageDictionary {
     nav: {
       home: string;
       about: string;
-      proyects: string;
+      projects: string;
       contact: string;
+    };
+    firstView: {
+      topTitle: string;
+      bottomTitle: string;
+      resume: string;
     };
   };
 }
@@ -18,9 +23,14 @@ const languages: LanguageDictionary = {
     nav: {
       home: 'Home',
       about: 'About',
-      proyects: 'Proyects',
+      projects: 'Proyects',
       contact: 'Contact',
     },
+    firstView: {
+      topTitle: 'Hello, Welcome to my portfolio!',
+      bottomTitle: 'Web Developer and Designer',
+      resume: 'My resume'
+    }
   },
   es: {
     title: 'Bienvenido a nuestro sitio web',
@@ -28,15 +38,15 @@ const languages: LanguageDictionary = {
     nav: {
       home: 'Inicio',
       about: 'Sobre mí',
-      proyects: 'Proyectos',
-      contact: 'Contacto',
+      projects: 'Proyectos',
+      contact: 'Contacto'
     },
+    firstView: {
+      topTitle: '¡Hola, Bienvenido a mi portafolio!',
+      bottomTitle: 'Desarrollador y Diseñador Web',
+      resume: 'Mi curriculum'
+    }
   },
-  /* fr: {
-        title: "Bienvenue sur notre site web",
-        content: "Ceci est le contenu de notre site web en français.",
-    }, */
-  // Agrega más lenguajes según necesites
 };
 
 export default languages;

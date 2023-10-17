@@ -22,7 +22,7 @@ h1 .accentColor {
     margin: 0;
     transition: color 0.3s ease;
     font-family: 'Array-Regular';
-    font-size: calc(18px + 6 * ((100vw - 320px) / 680));
+    font-size: 26px;
 }
 
 .navbarToggler {
@@ -152,6 +152,8 @@ h1 .accentColor {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 178px;
+    justify-content: flex-end;
 }
 
 .navbarBrandMobile {
@@ -197,7 +199,7 @@ h1 .accentColor {
         margin: 0;
         transition: color 0.3s ease;
         font-family: 'Array-Regular';
-        font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+        font-size: 20px;
     }
 
     .navbarBrand {

@@ -35,7 +35,7 @@ function Navbar() {
                 </li>
                 <li>
                     <a href="#" className={styles.navLink}>
-                        {currentLanguage.nav.proyects}
+                        {currentLanguage.nav.projects}
                     </a>
                 </li>
                 <li>
