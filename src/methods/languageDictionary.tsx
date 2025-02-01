@@ -28,9 +28,9 @@ const languages: LanguageDictionary = {
     },
     firstView: {
       topTitle: 'Hello, Welcome to my portfolio!',
-      bottomTitle: 'Web Developer and Designer',
-      resume: 'My resume'
-    }
+      bottomTitle: 'Full Stack Developer',
+      resume: 'My resume',
+    },
   },
   es: {
     title: 'Bienvenido a nuestro sitio web',
@@ -39,13 +39,13 @@ const languages: LanguageDictionary = {
       home: 'Inicio',
       about: 'Sobre mí',
       projects: 'Proyectos',
-      contact: 'Contacto'
+      contact: 'Contacto',
     },
     firstView: {
       topTitle: '¡Hola, Bienvenido a mi portafolio!',
-      bottomTitle: 'Desarrollador y Diseñador Web',
-      resume: 'Mi curriculum'
-    }
+      bottomTitle: 'Desarrollador Full Stack',
+      resume: 'Mi curriculum',
+    },
   },
 };
 

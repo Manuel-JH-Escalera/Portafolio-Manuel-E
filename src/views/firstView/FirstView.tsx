@@ -32,7 +32,7 @@ function FirstView() {
           <ThreeDModelViewer modelUrl="/MEVoxelArt.glb" />
           {isLoading ? <div className="loader"></div> : null }
           <div className={styles["title-container"]}>
-            <h3 className={styles["title-subtitle"]}>{currentLanguage.firstView.topTitle}</h3>
+            {/* <h3 className={styles["title-subtitle"]}>{currentLanguage.firstView.topTitle}</h3> */}
             <h1 className={styles["title-title"]}>
               Manuel <span className="accent-color">Escalera</span>
             </h1>

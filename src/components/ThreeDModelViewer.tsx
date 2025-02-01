@@ -52,7 +52,7 @@ type ThreeDModelViewerProps = {
 
 const ThreeDModelViewer: React.FC<ThreeDModelViewerProps> = ({ modelUrl }) => {
   return (
-    <div id='model-canvas'>
+    <div id='model-canvas' style={{ width: '100%', height: '100%' }}>
       <Canvas camera={{ position: [-5, 6, 5], fov: 60 }}>
         <ambientLight />
         {/* <directionalLight position={[0, 10, 5]} intensity={0.7} /> */}
