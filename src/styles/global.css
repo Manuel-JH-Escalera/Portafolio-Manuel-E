@@ -1,6 +1,15 @@
-@import url('../fonts/css/array.css');
-@import url('../fonts/css/khand.css');
+/* Fonts */
+@font-face {
+  font-family: 'Khand-Bold';
+  src: url('/fonts/Khand-Bold.woff2') format('woff2'),
+       url('/fonts/Khand-Bold.woff') format('woff'),
+       url('/fonts/Khand-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
 
+/* CSS Variables */
 :root {
   --light-bg-color: #ffffff;
   --dark-bg-color: #202023;
@@ -9,14 +18,17 @@
   --accent-text-color: #8B8000;
 }
 
-/* Estilos generales */
+/* Dark/Light mode — class lives on <html>, set by inline script (FOUC prevention) and kept in sync by DarkModeHandler */
+html {
+  scroll-behavior: smooth;
+}
 
-body.dark-mode {
+html.dark-mode body {
   background-color: var(--dark-bg-color);
   color: var(--dark-text-color);
 }
 
-body.light-mode {
+html.light-mode body {
   background-color: var(--light-bg-color);
   color: var(--light-text-color);
 }
@@ -26,28 +38,33 @@ h1 .accent-color {
 }
 
 select {
-  padding: 4px 6px; /* Añade un poco de padding si es necesario */
-  border-radius: 10px; /* Añade esquinas redondeadas, si lo prefieres */
-  appearance: none; /* Quita estilos predeterminados en algunos navegadores */
-  -webkit-appearance: none; /* Para Safari y Chrome */
-  -moz-appearance: none; /* Para Firefox */
-  box-shadow: none; /* En caso de que haya alguna sombra */
-  padding-right: 15px; /* Espacio para la flecha */
+  padding: 4px 6px;
+  border-radius: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none;
+  padding-right: 15px;
   background-size: 12px 12px;
 }
 
-select.dark-mode {
-  border: 1px solid var(--dark-text-color);
-  background-color: var(--dark-bg-color);
-  color: var(--dark-text-color);
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff'><path d='M4 8l4 4 4-4H4z'/></svg>") no-repeat right center;
-}
-
-select.light-mode {
+/* Default (light) */
+select {
   border: 1px solid var(--light-text-color);
   background-color: var(--light-bg-color);
   color: var(--light-text-color);
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23002855'><path d='M4 8l4 4 4-4H4z'/></svg>") no-repeat right center;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23002855'><path d='M4 8l4 4 4-4H4z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+html.dark-mode select {
+  border: 1px solid var(--dark-text-color);
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff'><path d='M4 8l4 4 4-4H4z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 
 select:focus {
@@ -58,22 +75,21 @@ select:focus {
   width: 500px;
   height: 500px;
   z-index: 0;
-} 
+}
 
 .loader {
-
   position: absolute;
   top: 30%;
 
   --s: 25px;
-  --g :5px;  
-  
+  --g: 5px;
+
   width: calc(3*(1.353*var(--s) + var(--g)));
   aspect-ratio: 3;
   background:
     linear-gradient(var(--accent-text-color) 0 0) left/33% 100% no-repeat,
     conic-gradient(from -90deg at var(--s) calc(0.353*var(--s)),
-      #fff 135deg,#666 0 270deg,#aaa 0); 
+      #fff 135deg,#666 0 270deg,#aaa 0);
   background-blend-mode: multiply;
   --_m:
     linear-gradient(to bottom right,
@@ -81,27 +97,28 @@ select:focus {
     conic-gradient(from -90deg at right var(--g) bottom var(--g),#000 90deg,#0000 0);
   -webkit-mask: var(--_m);
           mask: var(--_m);
-  background-size:   calc(100%/3) 100%;
+  background-size: calc(100%/3) 100%;
   -webkit-mask-size: calc(100%/3) 100%;
           mask-size: calc(100%/3) 100%;
   -webkit-mask-composite: source-in;
           mask-composite: intersect;
   animation: l7 steps(3) 1.5s infinite;
 }
+
 @keyframes l7 {
-  to {background-position: 150% 0%}
+  to { background-position: 150% 0% }
 }
 
 @media (max-width: 768px) {
   #model-canvas {
     width: 400px;
     height: 400px;
-  }  
+  }
 }
 
 @media (max-width: 400px) {
   #model-canvas {
     width: 100%;
     height: 400px;
-  }  
+  }
 }

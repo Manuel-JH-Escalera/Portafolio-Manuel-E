@@ -1,0 +1,82 @@
+.section {
+  padding: 80px 5vw;
+  background-color: var(--light-bg-color);
+  color: var(--light-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:global(html.dark-mode) .section {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: 'Khand-Bold', sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.titleAccent {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-text-color);
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bio {
+  font-family: 'Overpass', sans-serif;
+  font-size: clamp(17px, 2.2vw, 20px);
+  line-height: 1.7;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.tag {
+  font-family: 'Overpass', sans-serif;
+  font-size: 15px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid currentColor;
+  opacity: 0.75;
+}
+
+.tagAccent {
+  color: var(--accent-text-color);
+  border-color: var(--accent-text-color);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 5vw;
+  }
+}

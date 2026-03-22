@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#18181b"/>
+  <!-- Accent line -->
+  <rect x="80" y="340" width="80" height="4" fill="#8B8000"/>
+  <!-- Name -->
+  <text
+    x="80"
+    y="300"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-weight="700"
+    font-size="88"
+    fill="#ffffff"
+    letter-spacing="-1"
+  >Manuel <tspan fill="#8B8000">Escalera</tspan></text>
+  <!-- Role -->
+  <text
+    x="80"
+    y="400"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-weight="400"
+    font-size="36"
+    fill="#ffffff"
+    opacity="0.7"
+    letter-spacing="1"
+  >Full Stack Developer</text>
+  <!-- Domain -->
+  <text
+    x="80"
+    y="560"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-weight="400"
+    font-size="24"
+    fill="#8B8000"
+    letter-spacing="0.5"
+  >manuelescalera.dev</text>
+</svg>

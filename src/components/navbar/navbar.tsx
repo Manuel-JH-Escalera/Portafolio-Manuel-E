@@ -1,72 +1,81 @@
-import '../../App.css';
 import languages from '../../methods/languageDictionary';
 import useLanguageStore from '../../contexts/language/languageStore';
 import { useState } from 'react';
 import DarkModeHandler from '../DarkModeHandler';
 import LanguageDetector from '../LanguageHandler';
-import useDarkModeStore from '../../contexts/theme/darkModeStore';
+import { downloadResume } from '../../methods/methods';
 import styles from './navbar.module.css';
 
 function Navbar() {
     const { language } = useLanguageStore();
-    const { darkMode } = useDarkModeStore();
-
     const currentLanguage = languages[language] || languages.en;
-
     const [isOpen, setIsOpen] = useState(false);
 
-    const navClasses = darkMode ? `${styles.darkMode} ${styles.nav}` : `${styles.lightMode} ${styles.nav}`;
-    
     return (
-        <nav className={navClasses}>
-            <h1 className={styles.navbarBrand}>Manuel 
+        <nav className={styles.nav}>
+            <h1 className={styles.navbarBrand}>Manuel
                 <span className={styles.accentColor}> Web Dev</span>
             </h1>
+
+            {/* Desktop menu */}
             <ul className={`${styles.navbarMenu} ${isOpen ? styles.show : ''}`}>
-                <li>
-                    <a href="#" className={styles.navLink}>
-                        {currentLanguage.nav.home}
-                    </a>
-                </li>
-                <li>
-                    <a href="#" className={styles.navLink}>
-                        {currentLanguage.nav.about}
-                    </a>
-                </li>
-                <li>
-                    <a href="#" className={styles.navLink}>
-                        {currentLanguage.nav.projects}
-                    </a>
-                </li>
-                <li>
-                    <a href="#" className={styles.navLink}>
-                        {currentLanguage.nav.contact}
-                    </a>
-                </li>
+                <li><a href="#" className={styles.navLink}>{currentLanguage.nav.home}</a></li>
+                <li><a href="#about" className={styles.navLink}>{currentLanguage.nav.about}</a></li>
+                <li><a href="#experience" className={styles.navLink}>{currentLanguage.nav.experience}</a></li>
+                <li><a href="#projects" className={styles.navLink}>{currentLanguage.nav.projects}</a></li>
+                <li><a href="#contact" className={styles.navLink}>{currentLanguage.nav.contact}</a></li>
             </ul>
+
+            {/* Desktop controls */}
             <div className={styles.optionsContainer}>
-                <div className={`mx-1`}>
-                    <LanguageDetector />
-                </div>
-                <div className={`${styles.btnBorder} mx-1`}>
-                    <DarkModeHandler />
-                </div>
+                <LanguageDetector />
+                <DarkModeHandler />
+                <button
+                    className={styles.resumeBtn}
+                    onClick={() => downloadResume(language)}
+                >
+                    {currentLanguage.firstView.resume}
+                </button>
             </div>
-            <h1 className={styles.navbarBrandMobile}>Manuel 
+
+            {/* Mobile brand + controls */}
+            <h1 className={styles.navbarBrandMobile}>Manuel
                 <span className={styles.accentColor}> Web Dev</span>
             </h1>
             <div className={styles.navbarMobileContainer}>
-                <div className={`${styles.btnBorder} mx-1`}>
-                    <DarkModeHandler />
-                </div>
-                <div className={`${styles.btnBorderToggler} mx-1 `}>
-                    <button onClick={() => setIsOpen(!isOpen)} className={`${styles.navbarToggler} ${isOpen ? styles.close : ''}`}>
+                <DarkModeHandler />
+                <div className={styles.btnBorderToggler}>
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className={`${styles.navbarToggler} ${isOpen ? styles.close : ''}`}
+                    >
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
                 </div>
             </div>
+
+            {/* Mobile dropdown */}
+            {isOpen && (
+                <ul className={styles.mobileMenu}>
+                    <li><a href="#" className={styles.navLink} onClick={() => setIsOpen(false)}>{currentLanguage.nav.home}</a></li>
+                    <li><a href="#about" className={styles.navLink} onClick={() => setIsOpen(false)}>{currentLanguage.nav.about}</a></li>
+                    <li><a href="#experience" className={styles.navLink} onClick={() => setIsOpen(false)}>{currentLanguage.nav.experience}</a></li>
+                    <li><a href="#projects" className={styles.navLink} onClick={() => setIsOpen(false)}>{currentLanguage.nav.projects}</a></li>
+                    <li><a href="#contact" className={styles.navLink} onClick={() => setIsOpen(false)}>{currentLanguage.nav.contact}</a></li>
+                    <li className={styles.mobileMenuDivider}></li>
+                    <li className={styles.mobileMenuActions}>
+                        <LanguageDetector />
+                        <button
+                            className={styles.resumeBtn}
+                            onClick={() => { downloadResume(language); setIsOpen(false); }}
+                        >
+                            {currentLanguage.firstView.resume}
+                        </button>
+                    </li>
+                </ul>
+            )}
         </nav>
     );
 }

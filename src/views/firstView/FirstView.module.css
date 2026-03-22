@@ -1,8 +1,12 @@
-@import url('../../App.css');
-
 .first-view-container {
     height: 650px;
     width: 100%;
+    background-color: #f7f7f7;
+    transition: background-color 0.3s ease;
+}
+
+:global(html.dark-mode) .first-view-container {
+    background-color: #18181b;
 }
 
 .first-view {
@@ -29,22 +33,21 @@
 
 .title-subtitle {
     color: var(--accent-text-color);
-    font-family: 'Khand-Regular';
+    font-family: 'Overpass', sans-serif;
     font-size: calc(25px + 6 * ((100vw - 320px) / 680));
 }
 
 .title-title {
-    font-family: Array;
+    font-family: 'Khand-Bold', sans-serif;
     font-size: calc(60px + 6 * ((100vw - 320px) / 680));
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
-    letter-spacing: 3.6px; 
-    font-family: 'Array-Regular';
+    letter-spacing: 1px;
 }
 
 .title-description {
-    font-family: 'Khand-Regular';
+    font-family: 'Overpass', sans-serif;
     font-size: calc(30px + 6 * ((100vw - 320px) / 680));
     text-decoration: underline;
     text-decoration-color: var(--accent-text-color);
@@ -137,14 +140,14 @@
     }
     .title-subtitle {
         color: var(--accent-text-color);
-        font-family: 'Khand-Regular';
+        font-family: 'Overpass', sans-serif;
         font-size: calc(22px + 6 * ((100vw - 320px) / 680));
     }
     .title-title {
         font-size: calc(40px + 6 * ((100vw - 320px) / 680));
     }
     .title-description {
-        font-family: 'Khand-Regular';
+        font-family: 'Overpass', sans-serif;
         font-size: calc(26px + 6 * ((100vw - 320px) / 680));
     }
     .title-container {

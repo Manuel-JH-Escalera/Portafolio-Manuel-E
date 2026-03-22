@@ -1,40 +1,30 @@
 import React, { useEffect } from 'react';
 import useLanguageStore from '../contexts/language/languageStore';
-import useDarkModeStore from '../contexts/theme/darkModeStore';
+import styles from './LanguageHandler.module.css';
 
 const LanguageDetector: React.FC = () => {
   const { language, setLanguage } = useLanguageStore();
-  const { darkMode } = useDarkModeStore();
-
-  const handleChangeLanguage = (
-    event: React.ChangeEvent<HTMLSelectElement>,
-  ) => {
-    const selectedLanguage = event.target.value;
-    setLanguage(selectedLanguage);
-  };
 
   useEffect(() => {
-    // Verificar si el navegador soporta la propiedad 'navigator.language'.
-    if (navigator.language.includes('es')) {
-      setLanguage('es');
-    } else if (navigator.language.includes('en')) {
-      // Si la propiedad 'navigator.language' no está disponible, establecer un valor predeterminado.
-      setLanguage('en');
-    } else {
-      setLanguage('en');
-    }
+    setLanguage(navigator.language.includes('es') ? 'es' : 'en');
   }, []);
 
   return (
-    <select
-      name="languageSelector"
-      value={language}
-      onChange={handleChangeLanguage}
-      className={darkMode ? 'dark-mode' : 'light-mode'}
-    >
-      <option value="en">English</option>
-      <option value="es">Español</option>
-    </select>
+    <div className={styles.switcher}>
+      <button
+        onClick={() => setLanguage('en')}
+        className={language === 'en' ? styles.active : styles.btn}
+      >
+        EN
+      </button>
+      <span className={styles.divider}>|</span>
+      <button
+        onClick={() => setLanguage('es')}
+        className={language === 'es' ? styles.active : styles.btn}
+      >
+        ES
+      </button>
+    </div>
   );
 };
 

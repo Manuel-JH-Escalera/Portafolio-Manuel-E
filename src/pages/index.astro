@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/navbar/navbar';
+import FirstView from '../views/firstView/FirstView';
+import About from '../views/about/About';
+import Experience from '../views/experience/Experience';
+import Skills from '../views/skills/Skills';
+import Projects from '../views/projects/Projects';
+import Contact from '../views/contact/Contact';
+---
+
+<Layout
+  title="Manuel Escalera — Frontend Developer"
+  description="Frontend Developer with 3+ years of experience building modern web applications with React, Next.js and TypeScript. Based in Santiago, Chile."
+>
+  <Navbar client:load />
+  <FirstView client:load />
+  <About client:visible />
+  <Experience client:visible />
+  <Skills client:visible />
+  <Projects client:visible />
+  <Contact client:visible />
+</Layout>

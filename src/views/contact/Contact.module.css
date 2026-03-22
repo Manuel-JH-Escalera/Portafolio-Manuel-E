@@ -1,0 +1,84 @@
+.section {
+  padding: 80px 5vw 100px;
+  background-color: var(--light-bg-color);
+  color: var(--light-text-color);
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:global(html.dark-mode) .section {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-family: 'Khand-Bold', sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.titleAccent {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-text-color);
+  margin: 8px auto 32px;
+}
+
+.subtitle {
+  font-family: 'Overpass', sans-serif;
+  font-size: clamp(17px, 2.2vw, 20px);
+  line-height: 1.7;
+  opacity: 0.8;
+  margin-bottom: 48px;
+  max-width: 500px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Overpass', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: inherit;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 1px solid currentColor;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.link:hover {
+  opacity: 1;
+  color: var(--accent-text-color);
+  border-color: var(--accent-text-color);
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 60px 5vw 80px;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
