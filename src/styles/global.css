@@ -29,6 +29,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+}
+
 html.dark-mode body {
   background-color: var(--dark-bg-color);
   color: var(--dark-text-color);
