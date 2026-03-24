@@ -19,7 +19,7 @@ function FirstView() {
             <h1 className={styles["title-title"]}>
               Manuel <span className="accent-color">Escalera</span>
             </h1>
-            <h3 className={styles["title-description"]}>{currentLanguage.firstView.bottomTitle}</h3>
+            <p className={styles["title-description"]}>{currentLanguage.firstView.bottomTitle}</p>
           </div>
         </div>
       </div>

@@ -1,4 +1,6 @@
 /* Fonts */
+@import '@fontsource-variable/overpass';
+
 @font-face {
   font-family: 'Khand-Bold';
   src: url('/fonts/Khand-Bold.woff2') format('woff2'),
@@ -15,7 +17,11 @@
   --dark-bg-color: #202023;
   --light-text-color: #002855;
   --dark-text-color: #ffffff;
-  --accent-text-color: #8B8000;
+  --accent-text-color: #6B6300; /* 6.16:1 sobre blanco, 5.75:1 sobre #f7f7f7 */
+}
+
+html.dark-mode {
+  --accent-text-color: #C4A700; /* 7.07:1 sobre #202023, 7.50:1 sobre #18181b */
 }
 
 /* Dark/Light mode — class lives on <html>, set by inline script (FOUC prevention) and kept in sync by DarkModeHandler */

@@ -154,7 +154,6 @@
   border-radius: 12px;
   color: var(--accent-text-color);
   border: 1px solid var(--accent-text-color);
-  opacity: 0.8;
 }
 
 @media (max-width: 768px) {

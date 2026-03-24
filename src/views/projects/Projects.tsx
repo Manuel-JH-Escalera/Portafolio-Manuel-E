@@ -103,7 +103,7 @@ function Projects() {
             <h3 className={styles.featuredTitle}>{featuredProject.title}</h3>
             <p className={styles.featuredDescription}>{featuredProject.description[lang]}</p>
             <div className={styles.cardLinks}>
-              <a href={featuredProject.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
+              <a href={featuredProject.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.link} aria-label={`${t.projects.viewLive} — ${featuredProject.title}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                   <polyline points="15 3 21 3 21 9"></polyline>
@@ -155,7 +155,7 @@ function Projects() {
                   </a>
                 ))}
                 {project.liveUrl && (
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.link} aria-label={`${t.projects.viewLive} — ${project.title}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16">
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                       <polyline points="15 3 21 3 21 9"></polyline>
