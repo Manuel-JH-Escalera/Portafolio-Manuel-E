@@ -54,6 +54,54 @@
   background-color: var(--dark-bg-color);
 }
 
+.featuredStats {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  padding-bottom: 28px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(139, 128, 0, 0.25);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statValue {
+  font-family: 'Khand-Bold', sans-serif;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1;
+  color: var(--accent-text-color);
+}
+
+.statLabel {
+  font-family: 'Overpass', sans-serif;
+  font-size: 13px;
+  line-height: 1.35;
+  opacity: 0.75;
+}
+
+.featuredGroupTitle {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-text-color);
+  margin: 0 0 12px;
+}
+
+.dataNote {
+  font-family: 'Overpass', sans-serif;
+  font-size: 12px;
+  opacity: 0.55;
+  margin-left: auto;
+  align-self: center;
+}
+
 .featuredBadge {
   display: inline-block;
   font-family: 'Overpass', sans-serif;
@@ -91,8 +139,11 @@
 .featuredRight {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  justify-content: center;
+  gap: 20px;
+}
+
+.featuredRight .featuredGroupTitle {
+  margin-bottom: -8px;
 }
 
 .featuredHighlights {
@@ -220,6 +271,11 @@
     gap: 28px;
   }
 
+  .featuredStats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 16px;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -232,6 +288,19 @@
 
   .featuredCard {
     padding: 24px;
+  }
+
+  .featuredStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dataNote {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .cardLinks {
+    flex-wrap: wrap;
   }
 
   .grid {

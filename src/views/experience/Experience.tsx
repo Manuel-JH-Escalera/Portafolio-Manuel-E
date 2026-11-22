@@ -4,6 +4,36 @@ import styles from './Experience.module.css';
 
 const experienceData = [
   {
+    id: 0,
+    company: 'imprimetuscartas.cl',
+    role: {
+      en: 'Founder & Product Engineer',
+      es: 'Fundador & Product Engineer',
+    },
+    period: {
+      en: 'February 2026 – Present',
+      es: 'Febrero 2026 – Presente',
+    },
+    location: 'Santiago, Chile',
+    bullets: {
+      en: [
+        'Built and operate solo a print-on-demand platform for custom playing cards: 537 orders, ~USD 16k in sales and 139,000 cards printed in the first 7 months, growing 28x month over month between April and October.',
+        'Designed the whole system: in-browser card editor, volume pricing, two payment gateways (Webpay and MercadoPago), Python imposition worker for a cutting plotter, ops panel with courier integrations and electronic invoicing.',
+        'Shipped three AI systems to production: a WhatsApp support agent on Claude with tool use and human handoff, a computer-vision QA system (SIFT + RANSAC) for printed decks, and a two-model AI image generator with credits and moderation.',
+        '968 commits across 8 repos with Claude Code as a pair programmer, with staging/production environments, 146 test files and living documentation, while holding a full-time job.',
+        'Ran a full UX and accessibility audit for low-literacy and older users (plain language, 44 px touch targets, visible focus, large-text support) and built the costing tool (income statement, break-even, cost per sheet) that drives pricing.',
+      ],
+      es: [
+        'Construí y opero solo una plataforma de impresión bajo demanda de cartas personalizadas: 537 pedidos, $15,5 M CLP vendidos y 139 mil cartas impresas en los primeros 7 meses, con un crecimiento de 28 veces en ventas mensuales entre abril y octubre.',
+        'Diseñé el sistema completo: editor de cartas en el navegador, precios por volumen, dos pasarelas de pago (Webpay y MercadoPago), worker de imposición en Python para plotter de corte, panel de operación con couriers integrados y facturación electrónica.',
+        'Puse tres sistemas de IA en producción: un agente de atención por WhatsApp sobre Claude con tool use y derivación a humano, control de calidad por visión computacional (SIFT + RANSAC) para mazos impresos, y un generador de imágenes de dos modelos con créditos y moderación.',
+        '968 commits en 8 repos con Claude Code como par de programación, con ambientes de staging y producción, 146 archivos de test y documentación viva, en paralelo a un empleo a jornada completa.',
+        'Hice una auditoría completa de UX y accesibilidad pensada en personas con baja alfabetización digital y adultos mayores (lenguaje llano, zonas de toque de 44 px, foco visible, soporte de letra grande) y construí la herramienta de costeo (estado de resultados, punto de equilibrio, costo por hoja) con la que se fijan los precios.',
+      ],
+    },
+    tags: ['TanStack Start', 'React 19', 'TypeScript', 'Node.js', 'PostgreSQL', 'Python', 'Claude API', 'OpenCV'],
+  },
+  {
     id: 1,
     company: 'VTI Universidad de Chile',
     role: {

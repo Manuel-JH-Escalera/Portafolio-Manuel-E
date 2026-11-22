@@ -18,6 +18,7 @@ interface LanguageDictionary {
       sectionTitle: string;
       bio: string;
       bio2: string;
+      bio3: string;
       basedIn: string;
       openToWork: string;
     };
@@ -29,12 +30,16 @@ interface LanguageDictionary {
       sectionTitle: string;
       frontend: string;
       backend: string;
+      ai: string;
       dataCloud: string;
     };
     projects: {
       sectionTitle: string;
       viewCode: string;
       viewLive: string;
+      systems: string;
+      aiInProduction: string;
+      dataAsOf: string;
     };
     contact: {
       sectionTitle: string;
@@ -46,8 +51,9 @@ interface LanguageDictionary {
 
 const languages: LanguageDictionary = {
   en: {
-    title: 'Manuel Escalera — Frontend Developer',
-    content: 'Portfolio of Manuel Escalera, Frontend Developer based in Santiago, Chile.',
+    title: 'Manuel Escalera — Product Engineer',
+    content:
+      'Product Engineer (Full Stack + Applied AI) based in Santiago, Chile. Founder of imprimetuscartas.cl: 500+ orders and 139k cards printed in 7 months, built and operated solo.',
     nav: {
       home: 'Home',
       about: 'About',
@@ -56,14 +62,15 @@ const languages: LanguageDictionary = {
       contact: 'Contact',
     },
     firstView: {
-      topTitle: 'Hi, I\'m Manuel',
-      bottomTitle: 'Full Stack Developer',
+      topTitle: "Hi, I'm Manuel",
+      bottomTitle: 'Product Engineer · Full Stack + Applied AI',
       resume: 'My resume',
     },
     about: {
       sectionTitle: 'About Me',
-      bio: 'Full Stack developer with over 3 years of experience deeply rooted in the JavaScript ecosystem — React, Next.js, TypeScript, and Node.js across the entire stack. I build dynamic, scalable web applications from the frontend all the way to the backend, and my focus and passion lie in crafting exceptional user interfaces.',
-      bio2: 'Currently working at VTI Universidad de Chile, developing critical systems for the national university admission process (PAES) that impact thousands of users annually. Fluent in English — C2 Proficient.',
+      bio: 'I build complete products, from the idea to a paying customer. In 2026 I launched imprimetuscartas.cl, a print-on-demand platform for custom playing cards that already has over 500 orders and 139,000 cards printed, and I run it solo: product, code, infrastructure, logistics and support.',
+      bio2: 'Along the way I shipped a WhatsApp support agent powered by Claude, a computer-vision quality-control system and an AI image generator, all in production with real customers. I work with AI as a pair programmer every day and I care about owning the whole thing: frontend, backend, data and the decisions in between.',
+      bio3: '4+ years as a developer, currently at VTI Universidad de Chile on systems for the national university admission process (PAES). Fluent in English, C2.',
       basedIn: 'Santiago, Chile',
       openToWork: 'Open to work',
     },
@@ -75,22 +82,27 @@ const languages: LanguageDictionary = {
       sectionTitle: 'Skills',
       frontend: 'Frontend',
       backend: 'Backend',
+      ai: 'AI & Agents',
       dataCloud: 'Data & Cloud',
     },
     projects: {
       sectionTitle: 'Projects',
       viewCode: 'Code',
       viewLive: 'Live',
+      systems: 'What I built',
+      aiInProduction: 'AI in production',
+      dataAsOf: 'Production data as of November 2026',
     },
     contact: {
       sectionTitle: 'Contact',
-      subtitle: 'Have a project in mind or just want to say hi? I\'d love to hear from you.',
+      subtitle: "Have a project in mind or just want to say hi? I'd love to hear from you.",
       emailLabel: 'Send me an email',
     },
   },
   es: {
-    title: 'Manuel Escalera — Desarrollador Frontend',
-    content: 'Portafolio de Manuel Escalera, Desarrollador Frontend con base en Santiago, Chile.',
+    title: 'Manuel Escalera — Product Engineer',
+    content:
+      'Product Engineer (Full Stack + IA aplicada) con base en Santiago, Chile. Fundador de imprimetuscartas.cl: más de 500 pedidos y 139 mil cartas impresas en 7 meses, construido y operado solo.',
     nav: {
       home: 'Inicio',
       about: 'Sobre mí',
@@ -100,13 +112,14 @@ const languages: LanguageDictionary = {
     },
     firstView: {
       topTitle: 'Hola, soy Manuel',
-      bottomTitle: 'Desarrollador Full Stack',
+      bottomTitle: 'Product Engineer · Full Stack + IA aplicada',
       resume: 'Mi curriculum',
     },
     about: {
       sectionTitle: 'Sobre mí',
-      bio: 'Desarrollador Full Stack con más de 3 años de experiencia sólidamente arraigada en el ecosistema JavaScript — React, Next.js, TypeScript y Node.js a lo largo de todo el stack. Construyo aplicaciones web dinámicas y escalables de punta a punta, con especial foco y pasión en crear interfaces de usuario excepcionales.',
-      bio2: 'Actualmente trabajo en VTI Universidad de Chile, desarrollando sistemas críticos para el proceso de admisión universitaria nacional (PAES) que impactan a miles de usuarios anualmente. Inglés C2 Proficient.',
+      bio: 'Construyo productos completos, de la idea al cliente pagando. En 2026 lancé imprimetuscartas.cl, una plataforma de impresión bajo demanda de cartas personalizadas que ya supera los 500 pedidos y las 139 mil cartas impresas, y la opero solo: producto, código, infraestructura, logística y atención.',
+      bio2: 'En el camino puse en producción un agente de atención por WhatsApp con Claude, un sistema de control de calidad por visión computacional y un generador de imágenes con IA, todos con clientes reales. Trabajo con IA como par de programación todos los días y me importa hacerme cargo del producto entero: frontend, backend, datos y las decisiones que hay entre medio.',
+      bio3: 'Más de 4 años como desarrollador, actualmente en VTI Universidad de Chile en sistemas del proceso de admisión universitaria (PAES). Inglés C2.',
       basedIn: 'Santiago, Chile',
       openToWork: 'Disponible para trabajar',
     },
@@ -118,12 +131,16 @@ const languages: LanguageDictionary = {
       sectionTitle: 'Habilidades',
       frontend: 'Frontend',
       backend: 'Backend',
+      ai: 'IA & Agentes',
       dataCloud: 'Datos & Cloud',
     },
     projects: {
       sectionTitle: 'Proyectos',
       viewCode: 'Código',
       viewLive: 'Ver',
+      systems: 'Qué construí',
+      aiInProduction: 'IA en producción',
+      dataAsOf: 'Datos de producción a noviembre de 2026',
     },
     contact: {
       sectionTitle: 'Contacto',

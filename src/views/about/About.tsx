@@ -17,6 +17,7 @@ function About() {
           <div className={styles.textBlock}>
             <p className={styles.bio}>{t.about.bio}</p>
             <p className={styles.bio}>{t.about.bio2}</p>
+            <p className={styles.bio}>{t.about.bio3}</p>
             <div className={styles.tags}>
               <span className={styles.tag}>📍 {t.about.basedIn}</span>
               <span className={`${styles.tag} ${styles.tagAccent}`}>✦ {t.about.openToWork}</span>
