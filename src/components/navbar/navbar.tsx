@@ -14,7 +14,7 @@ function Navbar() {
     return (
         <nav className={styles.nav}>
             <h1 className={styles.navbarBrand}>Manuel
-                <span className={styles.accentColor}> Web Dev</span>
+                <span className={styles.accentColor}> Escalera</span>
             </h1>
 
             {/* Desktop menu */}
@@ -40,7 +40,7 @@ function Navbar() {
 
             {/* Mobile brand + controls */}
             <h1 className={styles.navbarBrandMobile}>Manuel
-                <span className={styles.accentColor}> Web Dev</span>
+                <span className={styles.accentColor}> Escalera</span>
             </h1>
             <div className={styles.navbarMobileContainer}>
                 <DarkModeHandler />
